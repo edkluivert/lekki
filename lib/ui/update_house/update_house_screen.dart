@@ -57,13 +57,17 @@ class _UpdateHouseScreenState extends State<UpdateHouseScreen> {
                   _formKey.currentState!.save();
                   // if all are valid then go to success screen
                   KeyboardUtil.hideKeyboard(context);
-                  _controller.updateHouse(bedroom: _controller.bedRoomController.text,
-                      sittingroom: _controller.sittingRoomController.text,
-                      kitchen: _controller.kitchenController.text,
-                      bathroom: _controller.bathRoomController.text,
-                      toilet: _controller.toiletController.text,
-                      description: _controller.descriptionController.text,
-                      validto: _controller.validToController.text, id: widget.data.id.toString());
+                  Map data = {
+                    "bedroom":  _controller.bedRoomController.text,
+                    "sittingRoom": _controller.sittingRoomController.text,
+                    "kitchen": _controller.kitchenController.text,
+                    "bathroom": _controller.bathRoomController.text,
+                    "toilet":  _controller.toiletController.text,
+                    "description": _controller.descriptionController.text,
+                    "validTo": _controller.validToController.text,
+                    "id":widget.data.id.toString()
+                  };
+                  _controller.updateHouse(data, widget.data.id.toString());
 
                 }else{
                   Get.snackbar(

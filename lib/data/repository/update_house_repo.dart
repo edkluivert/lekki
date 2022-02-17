@@ -7,8 +7,8 @@ class UpdateHouseRepo extends GetConnect{
 
   final AddHouseApi addHouseApi = AddHouseApi();
 
-   Future<Response> updateHouse(Data data) async{
-     var response = await post("https://sfc-lekki-property.herokuapp.com/api/v1/lekki/property",data);
+   Future<Response> updateHouse(Map data, String id) async{
+     var response = await post("https://sfc-lekki-property.herokuapp.com/api/v1/lekki/property/$id",data);
     return response.body;
    }
 

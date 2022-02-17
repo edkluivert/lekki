@@ -103,8 +103,9 @@ class UpdateHouseController extends GetxController {
     return null;
   }
 
-  Future updateHouse(Data data) async {
-     updateHouseRepo.updateHouse(data);
+  Future updateHouse(Map data, String id) async {
+     updateHouseRepo.updateHouse(data,id);
+
   }
 
 }
